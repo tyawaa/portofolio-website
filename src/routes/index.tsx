@@ -31,6 +31,7 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
+import profilePhoto from "../../pic/profile_photo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -323,11 +324,6 @@ function Hero() {
 }
 
 function ProfileFrame() {
-  // Elegant placeholder frame. To replace with a real photo:
-  //   1. Drop your image at src/assets/tyara.jpg
-  //   2. Import it: import tyaraPhoto from "@/assets/tyara.jpg"
-  //   3. Replace the <AbstractSilhouette /> below with:
-  //      <img src={tyaraPhoto} alt="Tyara Penelope Lumban Gaol" className="h-full w-full object-cover" />
   return (
     <div className="relative aspect-[4/5] w-full">
       <div className="absolute -inset-6 rounded-[2.25rem] bg-gradient-to-tr from-primary/25 via-amber/15 to-amber/25 blur-3xl" />
@@ -339,8 +335,12 @@ function ProfileFrame() {
       <div className="absolute inset-3 rotate-2 rounded-[2rem] border border-primary/30 bg-primary/5" />
 
       <div className="relative h-full overflow-hidden rounded-[2rem] border border-border bg-card backdrop-blur">
-        <AbstractSilhouette />
-        <DataNodes />
+        <img
+          src={profilePhoto}
+          alt="Tyara Penelope Lumban Gaol"
+          className="h-full w-full scale-[1.08] object-cover object-center"
+        />
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-card/45 to-transparent" />
 
         {/* Floating education card */}
         <div className="absolute -bottom-4 left-1/2 w-[88%] -translate-x-1/2 rounded-2xl border border-border bg-card/95 p-4 backdrop-blur-xl glow-teal">
@@ -360,104 +360,6 @@ function ProfileFrame() {
         </div>
       </div>
     </div>
-  );
-}
-
-function AbstractSilhouette() {
-  return (
-    <svg
-      viewBox="0 0 400 500"
-      className="absolute inset-0 h-full w-full"
-      aria-hidden
-    >
-      <defs>
-        <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stopColor="oklch(0.28 0.04 260)" />
-          <stop offset="100%" stopColor="oklch(0.2 0.03 260)" />
-        </linearGradient>
-        <radialGradient id="halo" cx="50%" cy="35%" r="40%">
-          <stop offset="0%" stopColor="oklch(0.78 0.11 195 / 0.45)" />
-          <stop offset="100%" stopColor="transparent" />
-        </radialGradient>
-        <linearGradient id="body" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stopColor="oklch(0.78 0.11 195)" stopOpacity="0.55" />
-          <stop offset="100%" stopColor="oklch(0.78 0.13 60)" stopOpacity="0.35" />
-        </linearGradient>
-      </defs>
-      <rect width="400" height="500" fill="url(#bg)" />
-      <rect width="400" height="500" fill="url(#halo)" />
-      {/* Head */}
-      <circle cx="200" cy="180" r="62" fill="url(#body)" opacity="0.9" />
-      {/* Shoulders */}
-      <path
-        d="M70 500 C90 360 140 290 200 290 C260 290 310 360 330 500 Z"
-        fill="url(#body)"
-        opacity="0.95"
-      />
-      {/* Soft outline */}
-      <circle
-        cx="200"
-        cy="180"
-        r="62"
-        fill="none"
-        stroke="oklch(0.78 0.11 195 / 0.5)"
-        strokeWidth="1"
-      />
-      <text
-        x="200"
-        y="470"
-        textAnchor="middle"
-        fontFamily="Inter, sans-serif"
-        fontSize="10"
-        fill="oklch(0.76 0.02 245 / 0.6)"
-        letterSpacing="3"
-      >
-        PHOTO PLACEHOLDER
-      </text>
-    </svg>
-  );
-}
-
-function DataNodes() {
-  const nodes = [
-    { x: 30, y: 40 },
-    { x: 350, y: 80 },
-    { x: 60, y: 380 },
-    { x: 340, y: 320 },
-    { x: 200, y: 30 },
-  ];
-  return (
-    <svg
-      viewBox="0 0 400 500"
-      className="absolute inset-0 h-full w-full"
-      aria-hidden
-    >
-      {nodes.map((n, i) =>
-        nodes
-          .slice(i + 1)
-          .map((m, j) => (
-            <line
-              key={`${i}-${j}`}
-              x1={n.x}
-              y1={n.y}
-              x2={m.x}
-              y2={m.y}
-              stroke="oklch(0.78 0.11 195 / 0.18)"
-              strokeWidth="0.7"
-            />
-          )),
-      )}
-      {nodes.map((n, i) => (
-        <circle
-          key={i}
-          cx={n.x}
-          cy={n.y}
-          r="3"
-          fill="oklch(0.78 0.13 60)"
-          opacity="0.85"
-        />
-      ))}
-    </svg>
   );
 }
 
