@@ -520,6 +520,15 @@ function Experience() {
       ],
     },
     {
+      role: "Computational Thinking Teaching Assistant",
+      org: "Institut Teknologi Bandung",
+      date: "August 2025 - December 2025",
+      bullets: [
+        "Guided and evaluated 65 students in Python programming logic and problem-solving concepts.",
+        "Graded assignments and exams consistently to support objective academic assessment.",
+      ],
+    },
+    {
       role: "Committee Member",
       org: "Data Science HMF ITB Competition and Community",
       date: "September 2025 – January 2026",
@@ -837,6 +846,11 @@ function Certifications() {
       name: "Fundamentals of Deep Learning",
       issuer: "NVIDIA",
       year: "2025",
+    },
+    {
+      name: "Workshop Participant: Future Networks: Artificial Intelligence (AI), Multi-Cluster Platforms (MCP), and Your Privacy",
+      issuer: "The IO Foundation x Institut Teknologi Bandung",
+      year: "2026",
     },
   ];
   const bootcamps = ["Business Case Bootcamp TEC", "Business Case Bootcamp AnakBisnis"];
