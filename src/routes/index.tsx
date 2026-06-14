@@ -343,7 +343,7 @@ function ProfileFrame() {
         <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-card/45 to-transparent" />
 
         {/* Floating education card */}
-        <div className="absolute -bottom-4 left-1/2 w-[88%] -translate-x-1/2 rounded-2xl border border-border bg-card/95 p-4 backdrop-blur-xl glow-teal">
+        <div className="absolute bottom-6 left-1/2 w-[88%] -translate-x-1/2 rounded-2xl border border-border bg-card/95 p-4 backdrop-blur-xl glow-teal">
           <div className="flex items-start gap-3">
             <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
               <GraduationCap className="h-5 w-5" />
