@@ -31,7 +31,7 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
-import profilePhoto from "../../pic/profile_photo.png";
+import profilePhoto from "../../pic/profile_photo_hero.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -315,7 +315,7 @@ function Hero() {
           </div>
         </div>
 
-        <div className="reveal relative mx-auto w-full max-w-md lg:max-w-none">
+        <div className="reveal relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-[470px] lg:justify-self-end">
           <ProfileFrame />
         </div>
       </div>
@@ -338,7 +338,7 @@ function ProfileFrame() {
         <img
           src={profilePhoto}
           alt="Tyara Penelope Lumban Gaol"
-          className="h-full w-full scale-[1.08] object-cover object-center"
+          className="h-full w-full object-cover object-center"
         />
         <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-card/45 to-transparent" />
 
